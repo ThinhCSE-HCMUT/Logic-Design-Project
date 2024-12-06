@@ -5,40 +5,52 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/buzzer.c \
 ../Core/Src/keypad.c \
 ../Core/Src/lcd.c \
+../Core/Src/led_rgb.c \
 ../Core/Src/main.c \
 ../Core/Src/rfid.c \
+../Core/Src/signal.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/timer.c 
+../Core/Src/timer.c \
+../Core/Src/wifi.c 
 
 OBJS += \
+./Core/Src/buzzer.o \
 ./Core/Src/keypad.o \
 ./Core/Src/lcd.o \
+./Core/Src/led_rgb.o \
 ./Core/Src/main.o \
 ./Core/Src/rfid.o \
+./Core/Src/signal.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/timer.o 
+./Core/Src/timer.o \
+./Core/Src/wifi.o 
 
 C_DEPS += \
+./Core/Src/buzzer.d \
 ./Core/Src/keypad.d \
 ./Core/Src/lcd.d \
+./Core/Src/led_rgb.d \
 ./Core/Src/main.d \
 ./Core/Src/rfid.d \
+./Core/Src/signal.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/timer.d 
+./Core/Src/timer.d \
+./Core/Src/wifi.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

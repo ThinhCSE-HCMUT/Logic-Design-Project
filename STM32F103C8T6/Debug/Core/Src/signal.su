@@ -1,0 +1,3 @@
+signal.c:11:6:correct	8	static
+signal.c:20:6:wrong	8	static
+signal.c:26:6:reset	8	static

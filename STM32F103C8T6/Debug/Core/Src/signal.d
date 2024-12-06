@@ -1,4 +1,5 @@
-Core/Src/lcd.o: ../Core/Src/lcd.c ../Core/Inc/lcd.h \
+Core/Src/signal.o: ../Core/Src/signal.c ../Core/Inc/signal.h \
+ ../Core/Inc/buzzer.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -25,9 +26,14 @@ Core/Src/lcd.o: ../Core/Src/lcd.c ../Core/Inc/lcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Core/Inc/lcd.h ../Core/Inc/led_rgb.h
 
-../Core/Inc/lcd.h:
+../Core/Inc/signal.h:
+
+../Core/Inc/buzzer.h:
+
+../Core/Inc/main.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -82,3 +88,7 @@ Core/Src/lcd.o: ../Core/Src/lcd.c ../Core/Inc/lcd.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+
+../Core/Inc/lcd.h:
+
+../Core/Inc/led_rgb.h:
