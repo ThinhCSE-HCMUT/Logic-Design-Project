@@ -32,7 +32,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -88,6 +89,12 @@ void Error_Handler(void);
 #define C3_GPIO_Port GPIOB
 #define C4_Pin GPIO_PIN_15
 #define C4_GPIO_Port GPIOB
+#define LED_RED_Pin GPIO_PIN_8
+#define LED_RED_GPIO_Port GPIOA
+#define LED_GREEN_Pin GPIO_PIN_9
+#define LED_GREEN_GPIO_Port GPIOA
+#define LED_BLUE_Pin GPIO_PIN_10
+#define LED_BLUE_GPIO_Port GPIOA
 #define TX_WIFI_Pin GPIO_PIN_6
 #define TX_WIFI_GPIO_Port GPIOB
 #define RX_WIFI_Pin GPIO_PIN_7
