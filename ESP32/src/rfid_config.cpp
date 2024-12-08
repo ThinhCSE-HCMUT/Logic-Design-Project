@@ -1,0 +1,50 @@
+#include "rfid_config.h"
+
+CardInfo scanHistory[10];
+int scanCount = 0;
+String memberDatabase[] = {"51293B2", "34211E74"};
+String memberNames[] = {"Lê Nguyễn Phúc Thịnh", "Nguyễn Kim Thuận"};
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+void setupRFID() {
+  SPI.begin();
+  mfrc522.PCD_Init();
+  Serial.println("Successfully setup RFID");
+}
+
+void handleRFID() {
+  if (mfrc522.PICC_IsNewCardPresent() && mfrc522.PICC_ReadCardSerial()) {
+    String cardID = "";
+    for (byte i = 0; i < mfrc522.uid.size; i++) {
+      cardID += String(mfrc522.uid.uidByte[i], HEX);
+    }
+    cardID.toUpperCase();
+
+    String date = getCurrentDate();
+    String time = getCurrentTime();
+
+    processCard(cardID, date, time);
+    mfrc522.PICC_HaltA();
+  }
+}
+
+void processCard(String cardID, String date, String time) {
+  String lastName = "Unknown";
+  bool isMember = false;
+
+  for (int i = 0; i < sizeof(memberDatabase) / sizeof(memberDatabase[0]); i++) {
+    if (memberDatabase[i] == cardID) {
+      lastName = memberNames[i];
+      isMember = true;
+      break;
+    }
+  }
+
+  if (scanCount < 10) {
+    scanHistory[scanCount++] = {cardID, lastName, date, time, isMember};
+  }
+
+  Serial.println("Card ID: " + cardID);
+  Serial.println("Date: " + date + " Time: " + time);
+  Serial.println("Member Status: " + String(isMember ? "Yes" : "No"));
+}
